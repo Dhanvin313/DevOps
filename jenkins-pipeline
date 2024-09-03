@@ -1,33 +1,33 @@
 #!/usr/bin/env groovy
 
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage('Validate the Application'){
-            steps{
-                script{
-	                bat 'mvn validate'
+    stages {
+        stage('Validate the Application') {
+            steps {
+                script {
+                    sh 'mvn validate'
                 }
             }
         }
-        stage('Compiling the Application'){
-            steps{
-                script{
-	                bat 'mvn compile'
+        stage('Compiling the Application') {
+            steps {
+                script {
+                    sh 'mvn compile'
                 }
             }
         }
-        stage('Testing the Application'){
-            steps{
-                script{
-	                bat 'mvn test'
+        stage('Testing the Application') {
+            steps {
+                script {
+                    sh 'mvn test'
                 }
             }
         }
-        stage('Package Application'){
-            steps{
-                script{
-	                bat 'mvn package'
+        stage('Package Application') {
+            steps {
+                script {
+                    sh 'mvn package'
                 }
             }
         }
